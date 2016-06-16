@@ -10,7 +10,13 @@
 
     <!--Description-->
     
-        <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+        <meta name="description" content="值得記念的第一篇，就記錄一下安裝 Hexo 的流程吧。
+本機環境需求
+Node.js
+Git
+
+安裝 Hexo1$ sudo npm install -g hexo
+建立 Hexo 目錄123$ hexo init &amp;lt;folder&amp;gt;$ cd &amp;lt;folder&amp;gt;$ npm ins">
     
 
     <!--Author-->
@@ -20,7 +26,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hello World"/>
+        <meta property="og:title" content="Hexo 安裝指南"/>
     
 
     <!--Open Graph Description-->
@@ -46,7 +52,7 @@
 
     <!-- Title -->
     
-    <title>Hello World - Susi X Android</title>
+    <title>Hexo 安裝指南 - Susi X Android</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
@@ -147,7 +153,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Hello World</h1>
+                    <h1>Hexo 安裝指南</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -173,15 +179,33 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+                <p>值得記念的第一篇，就記錄一下安裝 Hexo 的流程吧。</p>
+<h2 id="本機環境需求"><a href="#本機環境需求" class="headerlink" title="本機環境需求"></a>本機環境需求</h2><ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></li>
+<li><a href="https://git-scm.com/" target="_blank" rel="external">Git</a></li>
+</ul>
+<h2 id="安裝-Hexo"><a href="#安裝-Hexo" class="headerlink" title="安裝 Hexo"></a>安裝 Hexo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g hexo</span><br></pre></td></tr></table></figure>
+<h3 id="建立-Hexo-目錄"><a href="#建立-Hexo-目錄" class="headerlink" title="建立 Hexo 目錄"></a>建立 Hexo 目錄</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>這樣 Hexo 就會在 <folder> 這個資料夾建立好所有需要的檔案了。</folder></p>
+<h3 id="啟動-Hexo-伺服器"><a href="#啟動-Hexo-伺服器" class="headerlink" title="啟動 Hexo 伺服器"></a>啟動 Hexo 伺服器</h3><p>試著在本機啟動 Hexo 吧：</p>
+<p><code>$ hexo server</code></p>
+<p>好了後在網頁輸入 <code>http://localhost:4000</code>，正常的話就會看到你的網站了！</p>
+<h2 id="建立-Github-Repository"><a href="#建立-Github-Repository" class="headerlink" title="建立 Github Repository"></a>建立 Github Repository</h2><p>開一個新的 Github Repository，把 Blog 給 Github 管：</p>
+<ul>
+<li>Repository name 寫 <code>your_account.github.com</code></li>
+</ul>
+<h2 id="發佈到-Github-上"><a href="#發佈到-Github-上" class="headerlink" title="發佈到 Github 上"></a>發佈到 Github 上</h2><ul>
+<li>修改 <code>_config.yml</code>，加上</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: github</span><br><span class="line">  repository: git@github.com:your_account/your_account.github.com.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<ul>
+<li>發佈：<code>$ hexo deploy</code><ul>
+<li>出現 Permission Deny：<a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">加 SSH key</a></li>
+</ul>
+</li>
+<li>到 <code>http://your_account.github.io/</code> 看 Blog 有沒有正常運行。</li>
+<li>如果想發佈到其他 Server 可以參考官方文件: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></li>
+</ul>
 
 
                 
