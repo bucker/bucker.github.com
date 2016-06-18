@@ -10,6 +10,12 @@
 
     <!--Description-->
     
+        <meta name="description" content="什麼是 ConstraintLayout
+訂定 View／layout 之間的 constraint, 用以適應不同 size 的螢幕
+簡化 layout hierarchies，終於不用再 RelativeLayout 包 N 層了！
+增加 layout performance
+還不是抄 iOS ">
+    
 
     <!--Author-->
     
@@ -18,7 +24,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Susi X Android"/>
+        <meta property="og:title" content="Constraint Layout 初見"/>
     
 
     <!--Open Graph Description-->
@@ -31,7 +37,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -44,7 +50,7 @@
 
     <!-- Title -->
     
-    <title>Archiv: 2016/6 - Susi X Android</title>
+    <title>Constraint Layout 初見 - Susi X Android</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
@@ -137,63 +143,97 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2016/6</h1>
+                <div class="post-heading">
+                    <h1>Constraint Layout 初見</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-06-18
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Android/">#Android</a> <a href="/tags/ConstraintLayout/">#ConstraintLayout</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2016/06/18/Constraint-Layout/">
-        <h1 class="post-title archive">
-            Constraint Layout 初見
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-06-18
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/06/07/hello-world/">
-        <h1 class="post-title archive">
-            Hexo 安裝指南
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-06-07
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="什麼是-ConstraintLayout"><a href="#什麼是-ConstraintLayout" class="headerlink" title="什麼是 ConstraintLayout"></a>什麼是 ConstraintLayout</h1><ul>
+<li>訂定 View／layout 之間的 constraint, 用以適應不同 size 的螢幕</li>
+<li>簡化 layout hierarchies，終於不用再 RelativeLayout 包 N 層了！</li>
+<li>增加 layout performance</li>
+<li><del>還不是抄 iOS 的 Autolayout</del></li>
 </ul>
+<h1 id="要怎麼開始使用呢"><a href="#要怎麼開始使用呢" class="headerlink" title="要怎麼開始使用呢"></a>要怎麼開始使用呢</h1><ol>
+<li>下載 <a href="http://tools.android.com/download/studio/canary/latest" target="_blank" rel="external">Android Studio 2.2</a>（目前還在 preview 3）</li>
+<li>在 <code>build.gradle</code> 加上<br><code>compile &#39;com.android.support.constraint:constraint-layout:1.0.0-alpha3&#39;</code></li>
+</ol>
+<h1 id="教學"><a href="#教學" class="headerlink" title="教學"></a>教學</h1><ul>
+<li><a href="https://codelabs.developers.google.com/codelabs/constraint-layout/index.html" target="_blank" rel="external">Codelabs-Constraint Layout</a><ul>
+<li>基本上看這篇就好，<del>Google 大大寫的泥敢嘴？</del></li>
+</ul>
+</li>
+</ul>
+<h1 id="使用心得"><a href="#使用心得" class="headerlink" title="使用心得"></a>使用心得</h1><ul>
+<li>用過 iOS 的 Autolayout 應該都蠻有即視感的。不過 Android 這套比較容易上手，可能也是因為我都在寫 Android 啦。</li>
+<li>Autoconnect 和 Inference 大多時候很方便，只是工程師個性的我不喜歡，尤其是看到 Autoconnect 的箭頭開始慢慢連過去我只想叫它快點住手 (?)。</li>
+<li>Performance：<a href="http://leaks.wanari.com/2016/05/31/constraintlayout-android/" target="_blank" rel="external">根據這篇</a>快了約 10% 左右，階層更深的 layout 效果應該會更顯著，而且 hierarchy view 漂亮很多呀…</li>
+<li>短短的試用時間就遇到幾次畫面 “out of sync”，<del>那畫面太美我不敢看</del></li>
+</ul>
+<p>基本上這還是 preview 階段，問題應該在正式版本有所改善。以後專案用到的話，大概還是會以手刻 XML 為主，design mode 為輔吧（又多了好多 XML attributes 要背…）。</p>
+<h1 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h1><ul>
+<li><a href="https://codelabs.developers.google.com/codelabs/constraint-layout/index.html" target="_blank" rel="external">Codelabs</a></li>
+<li><a href="https://medium.com/exploring-android/exploring-the-new-android-constraintlayout-eed37fe8d8f1#.ij253omc6" target="_blank" rel="external">https://medium.com/exploring-android/exploring-the-new-android-constraintlayout-eed37fe8d8f1#.ij253omc6</a></li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
