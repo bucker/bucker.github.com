@@ -10,6 +10,15 @@
 
     <!--Description-->
     
+        <meta name="description" content="總之先從定義開始吧View 是一個什麼概念？
+Screen 上的一矩形區域，以一個 Rect 來表示
+left, top 表示 View 相對於它的 parent View 的起點
+width, height 表示 View 自己的寛高
+
+View 繪製過程
+Measure
+protected vo">
+    
 
     <!--Author-->
     
@@ -18,7 +27,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Make the magic go away"/>
+        <meta property="og:title" content="Android 自定義 View/ViewGroup"/>
     
 
     <!--Open Graph Description-->
@@ -31,7 +40,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -44,7 +53,7 @@
 
     <!-- Title -->
     
-    <title>Codelabs - Make the magic go away</title>
+    <title>Android 自定義 View/ViewGroup - Make the magic go away</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
@@ -137,50 +146,130 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#Codelabs</h1>
+                <div class="post-heading">
+                    <h1>Android 自定義 View/ViewGroup</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-08-19
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Android/">#Android</a> <a href="/tags/View/">#View</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2016/06/18/Constraint-Layout/">
-        <h1 class="post-title archive">
-            Constraint Layout 初見
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-06-18
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="總之先從定義開始吧"><a href="#總之先從定義開始吧" class="headerlink" title="總之先從定義開始吧"></a>總之先從定義開始吧</h1><h2 id="View-是一個什麼概念？"><a href="#View-是一個什麼概念？" class="headerlink" title="View 是一個什麼概念？"></a><code>View</code> 是一個什麼概念？</h2><ul>
+<li>Screen 上的一矩形區域，以一個 Rect 來表示</li>
+<li><code>left</code>, <code>top</code> 表示 View 相對於它的 parent View 的起點</li>
+<li><code>width</code>, <code>height</code> 表示 View 自己的寛高</li>
 </ul>
+<h2 id="View-繪製過程"><a href="#View-繪製過程" class="headerlink" title="View 繪製過程"></a>View 繪製過程</h2><ul>
+<li>Measure<ul>
+<li><code>protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {}</code></li>
+<li>override onMeasure 來重新定義 View 的寛高</li>
+</ul>
+</li>
+<li>Layout <ul>
+<li><code>protected void onLayout(boolean changed, int left, int top, int right, int bottom) {}</code></li>
+<li>沒有子 View 需要排列，不需要做額外工作</li>
+<li>ViewGroup 才會用到</li>
+</ul>
+</li>
+<li>Draw<ul>
+<li><code>protected void onDraw(Canvas canvas) {}</code></li>
+<li>啊就…畫 View 呀</li>
+</ul>
+</li>
+<li>其他 methods: <ul>
+<li><code>requestLayout</code>: View 重新調用一次 onLayout()</li>
+<li><code>invalidate</code>: View 重新調用一次 onDraw()</li>
+<li><code>forceLayout</code>: 標記 View 在下一次重繪，重新調用 layout 過程</li>
+</ul>
+</li>
+</ul>
+<h2 id="ViewGroup"><a href="#ViewGroup" class="headerlink" title="ViewGroup?"></a>ViewGroup?</h2><ul>
+<li>Base class of <code>layouts</code></li>
+<li>Hold other <code>View</code> or <code>ViewGroup</code></li>
+</ul>
+<h2 id="ViewGroup-繪製"><a href="#ViewGroup-繪製" class="headerlink" title="ViewGroup 繪製"></a>ViewGroup 繪製</h2><ul>
+<li>Measure<ul>
+<li><code>protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {}</code></li>
+<li>match_parent 或 xxxdp: <code>setMeasuredDimension()</code></li>
+<li>wrap_content: 遍歷所有的子 View，對每個子 View 進行測量，再算出最終 ViewGroup 的大小</li>
+</ul>
+</li>
+<li>Layout<ul>
+<li><code>protected void onLayout(boolean changed, int left, int top, int right, int bottom) {}</code></li>
+<li>對子 View 做排列</li>
+</ul>
+</li>
+<li>Draw<ul>
+<li><code>protected void onDraw(Canvas canvas) {}</code></li>
+<li>通常只需要調用 default method，讓子 View 去做事即可。</li>
+</ul>
+</li>
+</ul>
+<h2 id="LayoutParams"><a href="#LayoutParams" class="headerlink" title="LayoutParams"></a>LayoutParams</h2><ul>
+<li>存儲子 View 在加入 ViewGroup 時的一些訊息</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Kommentare:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
@@ -265,7 +354,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>

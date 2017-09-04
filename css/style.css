@@ -234,7 +234,7 @@ hr.small {
 }
 .post-preview > a:hover,
 .post-preview > a:focus {
-  text-decoration: underline;
+  text-decoration: none;
   color: #0085a1;
 }
 .post-preview > a > .post-title {

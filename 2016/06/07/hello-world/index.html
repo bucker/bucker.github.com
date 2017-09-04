@@ -35,7 +35,7 @@ Git
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="Susi X Android"/>
+    <meta property="og:site_name" content="Make the magic go away"/>
 
     <!--Type page-->
     
@@ -52,7 +52,7 @@ Git
 
     <!-- Title -->
     
-    <title>Hexo 安裝指南 - Susi X Android</title>
+    <title>Hexo 安裝指南 - Make the magic go away</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
@@ -106,7 +106,7 @@ Git
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Susi X Android</a>
+            <a class="navbar-brand" href="/">Make the magic go away</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -184,8 +184,8 @@ Git
 <li><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></li>
 <li><a href="https://git-scm.com/" target="_blank" rel="external">Git</a></li>
 </ul>
-<h2 id="安裝-Hexo"><a href="#安裝-Hexo" class="headerlink" title="安裝 Hexo"></a>安裝 Hexo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g hexo</span><br></pre></td></tr></table></figure>
-<h3 id="建立-Hexo-目錄"><a href="#建立-Hexo-目錄" class="headerlink" title="建立 Hexo 目錄"></a>建立 Hexo 目錄</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h2 id="安裝-Hexo"><a href="#安裝-Hexo" class="headerlink" title="安裝 Hexo"></a>安裝 Hexo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install -g hexo</div></pre></td></tr></table></figure>
+<h3 id="建立-Hexo-目錄"><a href="#建立-Hexo-目錄" class="headerlink" title="建立 Hexo 目錄"></a>建立 Hexo 目錄</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init &lt;folder&gt;</div><div class="line">$ cd &lt;folder&gt;</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
 <p>這樣 Hexo 就會在 <folder> 這個資料夾建立好所有需要的檔案了。</folder></p>
 <h3 id="啟動-Hexo-伺服器"><a href="#啟動-Hexo-伺服器" class="headerlink" title="啟動 Hexo 伺服器"></a>啟動 Hexo 伺服器</h3><p>試著在本機啟動 Hexo 吧：</p>
 <p><code>$ hexo server</code></p>
@@ -197,7 +197,7 @@ Git
 <h2 id="發佈到-Github-上"><a href="#發佈到-Github-上" class="headerlink" title="發佈到 Github 上"></a>發佈到 Github 上</h2><ul>
 <li>修改 <code>_config.yml</code>，加上</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: github</span><br><span class="line">  repository: git@github.com:your_account/your_account.github.com.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: github</div><div class="line">  repository: git@github.com:your_account/your_account.github.com.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 <ul>
 <li>發佈：<code>$ hexo deploy</code><ul>
 <li>出現 Permission Deny：<a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">加 SSH key</a></li>
